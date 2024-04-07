@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Initial load does not require duplicate checks, as checks are done in the beginning from first task add.
     for (item of JSON.parse(localStorage.getItem("todos")) || [])
-        document.querySelector("table.tasklist > tbody").append(!item.c ? getIncompleteTaskObject(item.t) : getCompletedTaskObject(item.task));
+        document.querySelector("table.tasklist > tbody").append(!item.c ? getIncompleteTaskObject(item.t) : getCompletedTaskObject(item.t));
 
     const taskListTable = document.querySelector("body > table.tasklist");
     taskListTable.addEventListener("click", function (event) {
