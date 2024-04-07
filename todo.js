@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.tagName != "INPUT")
             return;
         const selectedTodo = event.target.getAttribute("data-action");
-        const selectedAction = event.target.getAttribute("value");
-        switch (selectedAction) {
+        switch (event.target.getAttribute("value")) {
             case "DONE":
                 taskListTable.querySelector("td[data-action$='" + selectedTodo + "'").querySelector("p").className = "completed";
                 taskListTable.querySelector("td[data-action$='" + selectedTodo + "'").querySelector("input").remove();
