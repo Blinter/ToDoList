@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     //Delete inital entries since we are using local storage (Keep previous entries in original HTML for template)
-    for (item of document.querySelectorAll("td")) {
+    for (item of document.querySelectorAll("td"))
         if (item.getAttribute("data-action"))
             item.remove();
-    }    
+
     //Initial load does not require duplicate checks, as checks are done in the beginning from first task add.
     for (item of JSON.parse(localStorage.getItem("todos")) || [])
         document.querySelector("table.tasklist > tbody").append(!item.c ? getIncompleteTaskObject(item.t) : getCompletedTaskObject(item.task));
