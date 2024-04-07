@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Saving: Any modification to list will change local storage.
 //Through my HTML design I simply used unique <td>'s with data-action name for each task.
-//by searching the child, the <p> class will provide the status of completetion of each task.
+//by searching the child, the <p> class will provide the status of completion of each task.
 function saveAllTasks() {
     const taskList = document.querySelectorAll("td");
     const saved = [];
