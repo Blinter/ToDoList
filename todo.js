@@ -53,7 +53,7 @@ function saveAllTasks() {
     const saved = [];
     for(item of taskList)
         if(item.getAttribute("data-action"))
-            saved.push({t: item.getAttribute("data-action"), c: item.querySelector("p").className==="notcompleted"?0:1})
+            saved.push({t: item.getAttribute("data-action"), c: item.querySelector("p").className==="notcompleted"?0:1});
     localStorage.setItem("todos", JSON.stringify(saved));
 }
 
