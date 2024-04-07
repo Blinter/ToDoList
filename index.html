@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="center">
+    <div class="header">
+    </div>
+    <table class="dashboard">
+        <tr>
+            <td>
+                <p>TODO LIST</p>
+                <hr>
+        </tr>
+        </td>
+        <tr>
+            <td class="newactionlabel">ADD ACTION
+                <br />
+                <input type="text" name="actionname" />
+                <br />
+                <input type="button" name="actionaddnew" value="ADD" />
+                <br />
+        </tr>
+        </td>
+    </table>
+    <table class="tasklist">
+        <tr>
+            <td data-action="Feed the Cat">
+                <hr>
+                <p class="notcompleted">Feed the Cat</p>
+                <input type="button" name="actioncomplete" value="DONE" data-action="Feed the Cat" />
+                <input type="button" name="actionremove" value="REMOVE" data-action="Feed the Cat" />
+            </td>
+        </tr>
+        <tr>
+            <td data-action="Make Coffee">
+                <hr>
+                <p class="completed">Make Coffee</p>
+                <input type="button" name="actionremove" value="REMOVE" data-action="Make Coffee" />
+            </td>
+        </tr>
+    </table>
+    <div class="footer">Created by Blinter
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
