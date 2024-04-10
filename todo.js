@@ -40,7 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //Saving: Any modification to list will change local storage.
 //Through my HTML design I simply used unique <td>'s with data-action name for each task.
-//by searching the child, the <p> class will provide the status of completion of each task.
+/**
+* Save all Tasks and create and store the JSON string of the task list in local storage
+* by searching the child, the <p> class will provide the status of completion of each task.
+* @return {void}
+*/
 function saveAllTasks() {
     const saved = [];
     for(item of document.querySelectorAll("td"))
@@ -48,6 +52,11 @@ function saveAllTasks() {
             saved.push({t: item.getAttribute("data-action"), c: item.querySelector("p").className==="notcompleted"?0:1});
     localStorage.setItem("todos", JSON.stringify(saved));
 }
+/**
+* Generate an incomplete task
+* @param {string} actionName - A task to be completed
+* @return {Element}
+*/
 function getIncompleteTaskObject(actionName) {
     const templateToAdd1 = document.createElement("tr");
     const templateToAdd2 = document.createElement("td");
@@ -74,6 +83,11 @@ function getIncompleteTaskObject(actionName) {
     templateToAdd.appendChild(templateToAdd1);
     return templateToAdd;
 }
+/**
+* Generate a completed task
+* @param {string} actionName - A task that has been completed
+* @return {Element}
+*/
 function getCompletedTaskObject(actionName) {
     const templateToAdd1 = document.createElement("tr");
     const templateToAdd2 = document.createElement("td");
@@ -94,6 +108,11 @@ function getCompletedTaskObject(actionName) {
     templateToAdd.appendChild(templateToAdd1);
     return templateToAdd;
 }
+/**
+* Check for an action that may already be on the task list.
+* @param {string} actionName - The name of a task to find
+* @return {Element}
+*/
 function checkforExisting(actionName) {
     return !document.querySelector("td[data-action$='" + actionName + "'");
 }
