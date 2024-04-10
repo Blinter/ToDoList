@@ -111,7 +111,7 @@ function getCompletedTaskObject(actionName) {
 /**
 * Check for an action that may already be on the task list.
 * @param {string} actionName - The name of a task to find
-* @return {Element}
+* @return {boolean}
 */
 function checkforExisting(actionName) {
     return !document.querySelector("td[data-action$='" + actionName + "'");
